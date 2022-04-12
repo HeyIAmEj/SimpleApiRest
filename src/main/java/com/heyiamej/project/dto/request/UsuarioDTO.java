@@ -1,9 +1,11 @@
 package com.heyiamej.project.dto.request;
 
+import javax.persistence.Column;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.heyiamej.project.entity.Profissao;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
@@ -28,13 +30,23 @@ public class UsuarioDTO {
 
     @NotEmpty
     @CPF
-    private String documento;
+    private String cpf;
+
+    @NotEmpty
+    @Column(nullable = false)
+    private String email;
+
+    @NotEmpty
+    //@JsonIgnore
+    @Column(nullable = false)
+    private String senha;
+
+    private String permissao;
 
     @Valid
     private String dataNascimento;
 
     private Profissao profissao;
     private Integer nivel;
-
 
 }

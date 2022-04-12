@@ -6,7 +6,6 @@ import com.heyiamej.project.dto.request.UsuarioDTO;
 import com.heyiamej.project.dto.response.MessageResponseDTO;
 import com.heyiamej.project.entity.Profissao;
 import com.heyiamej.project.exception.ProfissaoNaoEncontradaException;
-import com.heyiamej.project.exception.UsuarioNaoEncontradaException;
 import com.heyiamej.project.repository.AtividadeRepository;
 import com.heyiamej.project.repository.ProfissaoRepository;
 import com.heyiamej.project.service.AtividadeService;
@@ -59,14 +58,14 @@ public class TestesController {
         Profissao profissao3 = profissaoService.getProfissaoById(3L);
 
         //Criando Usuarios
-        teste = usuarioService.createUsuario(new UsuarioDTO(1L, "Everton", "Jose", "748.682.614-36", "03/07/1999", profissao1, 1));
-        teste = usuarioService.createUsuario(new UsuarioDTO(2L, "Maria", "Soares", "256.346.596-63", "03/07/1999", profissao1, 1));
-        teste = usuarioService.createUsuario(new UsuarioDTO(3L, "Mariana", "Santos", "088.117.483-13", "03/07/1999", profissao1, 2));
-        teste = usuarioService.createUsuario(new UsuarioDTO(4L, "Jose", "Silva", "603.836.852-30", "03/07/1999", profissao1, 3));
-        teste = usuarioService.createUsuario(new UsuarioDTO(5L, "Bruna", "Lopes", "682.058.527-66", "03/07/1999", profissao2, 1));
-        teste = usuarioService.createUsuario(new UsuarioDTO(6L, "Armando", "Silva", "424.397.284-20", "03/07/1999", profissao2, 2));
-        teste = usuarioService.createUsuario(new UsuarioDTO(7L, "Clóvis", "Santos", "754.767.541-72", "03/07/1999", profissao3, 3));
-        teste = usuarioService.createUsuario(new UsuarioDTO(8L, "Marta", "Pereira", "948.778.826-34", "03/07/1999", profissao3, 2));
-        return "Profissões/Atividades/Usuarios Criadas";
+        teste = usuarioService.createUsuario(new UsuarioDTO(1L, "Everton", "Jose", "748.682.614-36", "everton7ej@gmail.com", "veve123", "PERM_ADMIN","03/07/1999", profissao1, 1));
+        teste = usuarioService.createUsuario(new UsuarioDTO(2L, "Maria", "Soares", "256.346.596-63", "veveteste1@gmail.com", "123", "PERM_USUARIO", "03/07/1999", profissao1, 1));
+        teste = usuarioService.createUsuario(new UsuarioDTO(3L, "Barbara", "Santos", "088.117.483-13", "veveteste2@gmail.com", "123", "PERM_MODERADOR", "03/07/1999", profissao1, 2));
+        teste = usuarioService.createUsuario(new UsuarioDTO(4L, "Jose", "Silva", "603.836.852-30", "null1", "null", "PERM_USUARIO", "03/07/1999", profissao1, 3));
+        teste = usuarioService.createUsuario(new UsuarioDTO(5L, "Bruna", "Lopes", "682.058.527-66", "null2", "null", "PERM_USUARIO", "03/07/1999", profissao2, 1));
+        teste = usuarioService.createUsuario(new UsuarioDTO(6L, "Armando", "Silva", "424.397.284-20", "null3", "null", "PERM_MODERADOR", "03/07/1999", profissao2, 2));
+        teste = usuarioService.createUsuario(new UsuarioDTO(7L, "Clóvis", "Santos", "754.767.541-72", "null4", "null", "PERM_USUARIO", "03/07/1999", profissao3, 3));
+        teste = usuarioService.createUsuario(new UsuarioDTO(8L, "Marta", "Pereira", "948.778.826-34", "null5", "null", "PERM_MODERADOR", "03/07/1999", profissao3, 2));
+        return "Dados testes criados";
     }
 }

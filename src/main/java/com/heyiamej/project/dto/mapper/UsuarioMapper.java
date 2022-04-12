@@ -12,8 +12,8 @@ public interface UsuarioMapper {
     UsuarioMapper INSTANCE = Mappers.getMapper(UsuarioMapper.class);
 
     @Mapping(source="dataNascimento", target="dataNascimento", dateFormat="dd/MM/yyyy")
-    Usuario toUsuario(UsuarioDTO UsuarioDTO);
+    Usuario toUsuario(UsuarioDTO usuarioDTO);
 
-    UsuarioDTO toDTO(Usuario Usuario);
+    UsuarioDTO toDTO(Usuario usuario);
 
 }

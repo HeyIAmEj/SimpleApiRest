@@ -1,9 +1,12 @@
 package com.heyiamej.project.entity;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 
@@ -26,8 +29,18 @@ public class Usuario {
     @Column(nullable = false)
     private String sobrenome;
 
+    @Column(nullable = false, unique = true)
+    private String cpf;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    //@JsonIgnore
     @Column(nullable = false)
-    private String documento;
+    private String senha;
+
+    @Column
+    private String permissao;
 
     @Column
     private LocalDate dataNascimento;
